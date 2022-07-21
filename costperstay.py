@@ -5,7 +5,6 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import scipy
-from sklearn.linear_model import LinearRegression
 
 
 df = pd.read_excel('2022 O2_gesamt_Stud.xlsx')
@@ -43,11 +42,11 @@ plotA2 = ax0.scatter(df_sorted_15['Ta (°C)'], df_sorted_15['Aufenthaltsdauer'],
 plotA3 = plt.plot(np.arange(16, 32, 0.1), func(np.arange(16, 32, 0.1), 256.92, -0.05847), color='k', linestyle='dashed', label='Exponential Regression 0.5 Molar')
 plotA4 = plt.plot(np.arange(16, 32, 0.1), func(np.arange(16, 32, 0.1), 274.95, -0.05857), color='k', label='Exponential Regression 1.5 Molar')
 
-StringA1 = 'Exponential regression 0.5 Molar:\n$256.92 \cdot e^{-0.05847*x}$'
-StringA2 = 'Exponential regression 1.5 Molar:\n$274.95 \cdot e^{-0.05857*x}$'
+StringA1 = 'Exponential regression 0.5 Molar:\n$256.92 \cdot e^{-0.05847*T_a}$'
+StringA2 = 'Exponential regression 1.5 Molar:\n$274.95 \cdot e^{-0.05857*T_a}$'
 
-ax0.annotate(StringA1, xy=(28, 115), fontsize=25)
-ax0.annotate(StringA2, xy=(28, 130), fontsize=25)
+ax0.annotate(StringA2, xy=(28, 115), fontsize=25)
+ax0.annotate(StringA1, xy=(28, 130), fontsize=25)
 
 ax0.tick_params(axis='both', which='major', labelsize=20)
 ax0.legend(loc='best', fontsize=25)
@@ -85,8 +84,8 @@ plotA2 = ax0.scatter(df_sorted_15['Ta (°C)'], df_sorted_15['Kosten/Aufenthalt (
 plotA3 = plt.plot(np.arange(16, 32, 0.1), func(np.arange(16, 32, 0.1), 23.68, -0.0843), color='k', linestyle='dashed',  label='Exponential Regression 0.5 Molar')
 plotA4 = plt.plot(np.arange(16, 32, 0.1), func(np.arange(16, 32, 0.1), 16.64, -0.06355), color='k', label='Exponential Regression 1.5 Molar')
 
-StringB1 = 'Exponential regression 0.5 Molar:\n$23.68 \cdot e^{-0.0843*x}$'
-StringB2 = 'Exponential regression 1.5 Molar:\n$16.64 \cdot e^{-0.06355*x}$'
+StringB1 = 'Exponential regression 0.5 Molar:\n$23.68 \cdot e^{-0.0843*T_a}$'
+StringB2 = 'Exponential regression 1.5 Molar:\n$16.64 \cdot e^{-0.06355*T_a}$'
 
 ax0.annotate(StringB1, xy=(28, 7), fontsize=25)
 ax0.annotate(StringB2, xy=(28, 6), fontsize=25)
